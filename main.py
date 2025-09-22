@@ -298,10 +298,11 @@ class ImageCompareApp:
         if index == self.gt_index:
             # calculate comparisons for all images
             for i, view in enumerate(self.image_views):
-                if i == index:
-                    view.set_gt()
-                elif view.get_image():
-                    view.calculate_psnr(self.image_views[self.gt_index].get_image())
+                if view:
+                    if i == index:
+                        view.set_gt()
+                    elif view.get_image():
+                        view.calculate_psnr(self.image_views[self.gt_index].get_image())
         else:
             # calculate comparison for new image
             if self.gt_index is not None:
