@@ -292,19 +292,22 @@ class ImageCompareApp:
             return None
     
     def on_image_load_main_thread(self, index):
+        # pull image from future
+        self.image_views[index].get_image()
+        
         if index == self.gt_index:
             # calculate comparisons for all images
             for i, view in enumerate(self.image_views):
                 if i == index:
                     view.set_gt()
-                elif view.image:
+                elif view.get_image():
                     view.calculate_psnr(self.image_views[self.gt_index].get_image())
         else:
             # calculate comparison for new image
             if self.gt_index is not None:
                 gt_view = self.image_views[self.gt_index]
-                if gt_view and gt_view.image:
-                    self.image_views[index].calculate_psnr(gt_view.get_image())
+                if gt_view and gt_view.get_image():
+                    self.image_views[index].calculate_psnr(gt_view.image)
         
         if index == self.gt_index:
             # need to redraw all cells because gt_index changes comparison text of other cells
