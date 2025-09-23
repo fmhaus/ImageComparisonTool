@@ -14,6 +14,8 @@ A Python application for comparing four images simultaneously with advanced navi
   - Arrow keys to navigate between image groups
 - **Ground Truth Analysis**: Designate one view as ground truth and display comparison metrics
 
+## Screenshot
+
 ![Application Screenshot](./images/screenshot.png)
 
 ## Installation
