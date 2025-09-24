@@ -6,8 +6,7 @@ A Python application for comparing four images simultaneously with advanced navi
 
 - **Quad View Comparison**: Display and compare four images side-by-side
 - **Flexible Folder Selection**: Load images from four different directories
-- **Intelligent Grouping**: Automatically group images by filename prefixes
-- **Smart Labeling**: Display folder names or custom labels from `label.txt` files
+- **Automated Grouping**: Automatically group images by filename prefixes
 - **Interactive Navigation**:
   - Mouse scroll to zoom in/out
   - Click and drag to pan images
